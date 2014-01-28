@@ -1,6 +1,6 @@
 # ring-swagger-ui
 
-A Clojure library designed to ... well, that part is up to you.
+Packaged version of Swagger-UI for ring-based clojure apps.
 
 ## Usage
 
@@ -8,7 +8,6 @@ FIXME
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Metosin Oy
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License, the same as Clojure.
