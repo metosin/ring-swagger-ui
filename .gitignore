@@ -8,4 +8,3 @@ pom.xml.asc
 /.lein-*
 /.nrepl-port
 .project
-resources/swagger-ui
