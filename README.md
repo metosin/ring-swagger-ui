@@ -8,7 +8,7 @@ Add the following dependency to your `project.clj` file:
 
     [metosin/ring-swagger-ui "2.0.4"]
 
-and you have full Swagger-UI ready in `/swagger-ui` on classpath. The default expected URI for the api-docs is `/api/docs`. You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
+and you have full Swagger-UI ready in `/swagger-ui` on classpath. The default expected URI for the api-docs is `/api/api-docs`. You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
 
 You might also be intrested in [Ring-Swagger](https://github.com/metosin/ring-swagger).
 

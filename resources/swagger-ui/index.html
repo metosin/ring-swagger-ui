@@ -19,7 +19,7 @@
   <script type="text/javascript">
     $(function () {
       window.swaggerUi = new SwaggerUi({
-      url: "/api/docs",
+      url: "/api/api-docs",
       dom_id: "swagger-ui-container",
     });
 
@@ -32,7 +32,11 @@
 <body>
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="https://github.com/wordnik/swagger-core/wiki">swagger</a>
+    <a id="logo" href="https://helloreverb.com/developers/swagger">Swagger</a>
+    <form id='api_selector'>
+      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
+      <div class='input'><a id="explore" href="#">Explore</a></div>
+    </form>
   </div>
 </div>
 
