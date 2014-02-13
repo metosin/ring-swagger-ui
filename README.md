@@ -6,7 +6,7 @@ Jar-packaged version of [Swagger-UI](https://github.com/wordnik/swagger-ui) for 
 
 Add the following dependency to your `project.clj` file:
 
-    [metosin/ring-swagger-ui "2.0.4"]
+    [metosin/ring-swagger-ui "2.0.7"]
 
 and you have full Swagger-UI ready in `/swagger-ui` on classpath. The default expected URI for the api-docs is `/api/api-docs`. You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
 
@@ -24,17 +24,18 @@ git submodule update
 ```
 pushd ext/swagger-ui
 git fetch
+git tag
 git checkout <new tag>
 popd
 vim project.clj # Edit version
-lein install
+lein do clean, install
 ```
 
 ## TODO
 
-- [ ] Custom API url
-- [ ] Update index.html automatically
-- [ ] Daily builds (Travis?)
+- easy way to override custom API url
+- Update index.html automatically
+- Daily builds (Travis?)
 
 ## License
 
