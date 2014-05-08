@@ -7,12 +7,32 @@ Jar-packaged version of [Swagger-UI](https://github.com/wordnik/swagger-ui) for 
 Add the following dependency to your `project.clj` file:
 
 ```clojure
-[metosin/ring-swagger-ui "2.0.10"]
+[metosin/ring-swagger-ui "2.0.16"]
 ```
 
-and you have full Swagger-UI ready in `/swagger-ui` on classpath. The default expected URI for the api-docs is `/api/api-docs`. You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
+and you have full Swagger-UI ready in `/swagger-ui` on classpath.
+The `ring.swagger.ui` namespace includes a function which can be used to create ring handler to serve the Swagger-ui.
+The default URI for the api-docs is `/api/api-docs` but this can be changed by copying `resources/swagger-ui/conf.js`
+to your own project or using provided function to create handler which will dynamically create proper file based
+on given options.
+ You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
 
 You might also be intrested in [Ring-Swagger](https://github.com/metosin/ring-swagger).
+
+## Usage
+
+Example using [Compojure-api](https://github.com/metosin/compojure-api) and setting custom urls for swagger-docs and swagger-ui.
+```Clojure
+(defapi app
+  (ring.swagger.ui/swagger-ui
+    "/swagger-ui"
+    :api-url "/swagger-docs")
+  (compojure.api.swagger/swagger-docs
+    "/swagger-docs"
+    :title "Sample Api"
+    :description "Compojure Api sample application")
+  ...)
+```
 
 ## Packaging
 
@@ -39,7 +59,6 @@ lein do clean, install
 
 ## TODO
 
-- easy way to override custom API url
 - Automate updates
   - Update index.html automatically
   - Daily builds (Travis?)
