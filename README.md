@@ -7,7 +7,7 @@ Jar-packaged version of [Swagger-UI](https://github.com/wordnik/swagger-ui) for 
 Add the following dependency to your `project.clj` file:
 
 ```clojure
-[metosin/ring-swagger-ui "2.0.16-2"]
+[metosin/ring-swagger-ui "2.0.17"]
 ```
 
 and you have full Swagger-UI ready in `/swagger-ui` on classpath.
