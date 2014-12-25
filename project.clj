@@ -12,4 +12,4 @@
   :resource-paths ["target/resources"]
   :hooks [leiningen.resource]
   :profiles {:dev {:plugins [[lein-clojars "0.9.1"]
-                             [lein-resource "0.3.3"]]}})
+                             [lein-resource "14.10.1"]]}})
