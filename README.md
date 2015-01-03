@@ -1,15 +1,12 @@
 # Ring-Swagger-UI
 
+[![Clojars Project](http://clojars.org/metosin/ring-swagger-ui/latest-version.svg)](http://clojars.org/metosin/ring-swagger-ui)
+
 Jar-packaged version of [Swagger-UI](https://github.com/wordnik/swagger-ui) for ring-based clojure web-apps (and other JVM apps).
 
 ## Usage
 
-Add the following dependency to your `project.clj` file:
-
-```clojure
-[metosin/ring-swagger-ui "2.0.17"]
-```
-
+Add the dependency to your `project.clj` file
 and you have full Swagger-UI ready in `/swagger-ui` on classpath.
 You can override the `index.html`-page by putting a new page into your local `resources/swagger-ui`-directory.
 The default URI for the api-docs is `/api/api-docs` but this can be changed by copying `resources/swagger-ui/conf.js` to your projects
