@@ -7,7 +7,7 @@
             :comments "same as Clojure"}
   :resource {:resource-paths ["ext/swagger-ui/dist" "resources/swagger-ui"]
              :target-path "target/resources/swagger-ui"
-             :skip-stencil [ #".*/images/.*" ]
+             :skip-stencil [ #".*" ]
              :excludes [#"ext/swagger-ui/dist/index\.html" #".*\.DS_Store"]}
   :resource-paths ["target/resources"]
   :hooks [leiningen.resource]
