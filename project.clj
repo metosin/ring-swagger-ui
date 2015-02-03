@@ -1,4 +1,4 @@
-(defproject metosin/ring-swagger-ui "2.0.24"
+(defproject metosin/ring-swagger-ui "2.1.1-M1-SNAPSHOT"
   :description "Swagger UI for Ring apps"
   :url "https://github.com/metosin/ring-swagger-ui"
   :license {:name "Eclipse Public License"
@@ -7,7 +7,7 @@
             :comments "same as Clojure"}
   :resource {:resource-paths ["ext/swagger-ui/dist" "resources/swagger-ui"]
              :target-path "target/resources/swagger-ui"
-             :skip-stencil [ #".*/images/.*" ]
+             :skip-stencil [ #".*" ]
              :excludes [#"ext/swagger-ui/dist/index\.html" #".*\.DS_Store"]}
   :resource-paths ["target/resources"]
   :hooks [leiningen.resource]
