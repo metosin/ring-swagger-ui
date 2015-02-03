@@ -1,4 +1,4 @@
-(defproject metosin/ring-swagger-ui "2.1.0-M1-SNAPSHOT"
+(defproject metosin/ring-swagger-ui "2.1.1-M1-SNAPSHOT"
   :description "Swagger UI for Ring apps"
   :url "https://github.com/metosin/ring-swagger-ui"
   :license {:name "Eclipse Public License"
