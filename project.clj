@@ -1,4 +1,4 @@
-(defproject metosin/ring-swagger-ui "2.1.0"
+(defproject metosin/ring-swagger-ui "2.1.1"
   :description "Swagger UI for Ring apps"
   :url "https://github.com/metosin/ring-swagger-ui"
   :license {:name "Eclipse Public License"
@@ -11,5 +11,4 @@
              :excludes [#"ext/swagger-ui/dist/index\.html" #".*\.DS_Store"]}
   :resource-paths ["target/resources"]
   :hooks [leiningen.resource]
-  :profiles {:dev {:plugins [[lein-clojars "0.9.1"]
-                             [lein-resource "14.10.1"]]}})
+  :profiles {:dev {:plugins [[lein-resource "14.10.1"]]}})
