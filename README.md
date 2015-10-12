@@ -23,7 +23,7 @@ Example using [Compojure-api](https://github.com/metosin/compojure-api) and sett
 (defapi app
   (ring.swagger.ui/swagger-ui
     "/swagger-ui"
-    :api-url "/swagger-docs")
+    :swagger-docs "/swagger-docs")
   (compojure.api.swagger/swagger-docs
     "/swagger-docs"
     :title "Sample Api"
