@@ -37,7 +37,7 @@
       if(window.SwaggerTranslator) {
         window.SwaggerTranslator.translate();
       }
-      window.swaggerUi = new SwaggerUi({
+      window.swaggerUi = new SwaggerUi($.extend({}, {
         url: url,
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
@@ -64,7 +64,7 @@
         docExpansion: "none",
         apisSorter: "alpha",
         showRequestHeaders: false
-      });
+      }, API_CONF));
 
       function addApiKeyAuthorization(){
         var key = encodeURIComponent($('#input_apiKey')[0].value);
