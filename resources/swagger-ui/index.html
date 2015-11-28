@@ -69,9 +69,25 @@
       function addApiKeyAuthorization(){
         var key = encodeURIComponent($('#input_apiKey')[0].value);
         if(key && key.trim() != "") {
-            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
-            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
-            log("added key " + key);
+          var keyName = "api_key";
+          var keyIn = "query";
+          // lot's of issues in swagger-ui, no idea when it will be fixed, see:
+          // https://github.com/swagger-api/swagger-ui/issues/1766
+          // https://github.com/swagger-api/swagger-ui/pull/1731
+          // https://github.com/swagger-api/swagger-ui/issues/1593
+          if (window.swaggerUi.api.securityDefinitions && window.swaggerUi.api.securityDefinitions.api_key) {
+            // read api_key name from the spec
+            if (window.swaggerUi.api.securityDefinitions.api_key.name) {
+              keyName = window.swaggerUi.api.securityDefinitions.api_key.name;
+            }
+            // read api_key in from the spec
+            if (window.swaggerUi.api.securityDefinitions.api_key.in) {
+              keyIn = window.swaggerUi.api.securityDefinitions.api_key.in;
+            }
+          }
+          var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(keyName, key, keyIn);
+          window.swaggerUi.api.clientAuthorizations.add(keyName, apiKeyAuth);
+          log("added key " + key + " with name " + keyName + " in " + keyIn);
         }
       }
 
