@@ -72,6 +72,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+### Versioning
+
+Follows Swagger-UI versions, except if build fix is required, then a build identifier
+(.e.g `-1`, starting from 1), can be appended.
+
 ### These scripts
 
 Copyright © 2014-2015 [Metosin Oy](http://www.metosin.fi)
