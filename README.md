@@ -48,7 +48,7 @@ popd
 git add ext/swagger-ui # Update submodule to point into new swagger-ui
 vim project.clj README.md # Edit version
 git add project.clj README.md
-diff -u resources/swagger-ui/index.html ext/swagger-ui/public/index.html
+diff -u resources/swagger-ui/index.html ext/swagger-ui/dist/index.html
 # Fix local index.html
 git commit -m "New version"
 git tag -a "v2.y.z" -m "v2.y.z"
