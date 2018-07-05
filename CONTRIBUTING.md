@@ -1,6 +1,7 @@
 # How to contribute
 
-Contributions are welcome.
+Contributions are welcome, but please don't send Pull requests which just update
+the version. For updates, create issue and we'll handle the update ourselves.
 
 Please file bug reports and feature requests to https://github.com/metosin/ring-swagger-ui/issues.
 
