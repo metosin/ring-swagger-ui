@@ -16,4 +16,4 @@
              :excludes [#"ext/.*/index\.html"]}
   :resource-paths ["target/resources"]
   :hooks [leiningen.resource]
-  :profiles {:dev {:plugins [[lein-resource "14.10.1"]]}})
+  :profiles {:dev {:plugins [[lein-resource "17.06.1"]]}})
