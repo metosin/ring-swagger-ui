@@ -14,6 +14,6 @@
                         #".*/swagger-ui-.*\.js.*"
                         #".*/.*\.html"]
              :excludes [#"ext/.*/index\.html"]}
-  :resource-paths ["target/resources"]
+  :resource-paths ["target/resources" "resources-graalvm"]
   :hooks [leiningen.resource]
   :profiles {:dev {:plugins [[lein-resource "17.06.1"]]}})
