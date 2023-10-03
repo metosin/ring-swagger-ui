@@ -1,4 +1,4 @@
-(defproject metosin/ring-swagger-ui "5.0.0-alpha.0"
+(defproject metosin/ring-swagger-ui "5.9.0"
   :description "Swagger UI for Ring apps"
   :url "https://github.com/metosin/ring-swagger-ui"
   :license {:name "Eclipse Public License"
@@ -15,8 +15,7 @@
                         #".*/swagger-ui-.*\.js.*"
                         #".*/swagger-initializer\.js"
                         #".*/.*\.html"]
-             :excludes [#"ext/.*/index\.html"
-                        #"ext/.*/swagger-initializer\.js"]}
+             :excludes [#"ext/.*/swagger-initializer\.js"]}
   :resource-paths ["target/resources" "resources-graalvm"]
   :hooks [leiningen.resource]
   :profiles {:dev {:plugins [[lein-resource "17.06.1"]]}})
