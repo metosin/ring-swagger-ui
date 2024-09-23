@@ -45,8 +45,8 @@ git fetch
 git checkout <new tag>
 popd
 git add ext/swagger-ui # Update submodule to point into new swagger-ui
-vim project.clj README.md # Edit version
-git add project.clj README.md
+vim project.clj # Edit version
+git add project.clj
 diff -u resources/swagger-ui/index.html ext/swagger-ui/dist/index.html
 diff -u resources/swagger-ui/swagger-initializer.js ext/swagger-ui/dist/swagger-initializer.js
 # Fix local index.html
