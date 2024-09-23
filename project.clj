@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"
             :distribution :repo
             :comments "same as Clojure"}
+  :deploy-repositories [["clojars" {:sign-releases false}]]
   :resource {:resource-paths ["ext/swagger-ui/dist"
                               "resources/swagger-ui"]
              :target-path "target/resources/swagger-ui"
