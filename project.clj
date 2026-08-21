@@ -15,6 +15,7 @@
                         #".*/index\.css"
                         #".*/swagger-ui-.*\.js.*"
                         #".*/swagger-initializer\.js"
+                        #".*/oauth2-redirect\.js"
                         #".*/.*\.html"]
              :excludes [#"ext/.*/swagger-initializer\.js"]}
   :resource-paths ["target/resources" "resources-graalvm"]
