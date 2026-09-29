@@ -1,4 +1,4 @@
-(defproject metosin/ring-swagger-ui "5.32.11"
+(defproject metosin/ring-swagger-ui "5.32.11-1"
   :description "Swagger UI for Ring apps"
   :url "https://github.com/metosin/ring-swagger-ui"
   :license {:name "Eclipse Public License"
@@ -9,7 +9,7 @@
   :resource {:resource-paths ["ext/swagger-ui/dist"
                               "resources/swagger-ui"]
              :target-path "target/resources/swagger-ui"
-             :skip-stencil [ #".*" ]
+             :skip-stencil [#".*"]
              :includes [#".*/favicon.*\.png"
                         #".*/swagger-ui\.css.*"
                         #".*/index\.css"
