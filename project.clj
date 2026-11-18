@@ -5,7 +5,11 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"
             :distribution :repo
             :comments "same as Clojure"}
-  :deploy-repositories [["clojars" {:sign-releases false}]]
+  ;; CI (.github/workflows/release.yml) sets CLOJARS_USERNAME and
+  ;; CLOJARS_PASSWORD; locally ~/.lein/credentials.clj.gpg still works.
+  :deploy-repositories [["clojars" {:sign-releases false
+                                    :username [:env/clojars_username :gpg]
+                                    :password [:env/clojars_password :gpg]}]]
   :resource {:resource-paths ["ext/swagger-ui/dist"
                               "resources/swagger-ui"]
              :target-path "target/resources/swagger-ui"

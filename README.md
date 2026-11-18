@@ -50,10 +50,30 @@ git add project.clj
 diff -u resources/swagger-ui/swagger-initializer.js ext/swagger-ui/dist/swagger-initializer.js
 # Fix local index.html
 git commit -m "New version"
-git tag -a "v2.y.z" -m "v2.y.z"
-git push --tags origin master # Push new tags and master
-lein do clean, install
+lein do clean, install # Optional: test the jar locally
 ```
+
+Then release it, see below.
+
+## Releasing
+
+Releases are deployed to Clojars by the [Release workflow](.github/workflows/release.yml)
+when a version tag is pushed.
+
+1. Bump the version in `project.clj` (and the submodule, see above) and commit.
+2. Tag the commit with the same version, prefixed with `v`. Signing the tag is
+   recommended; a signed tag needs a message:
+   ```Shell
+   git tag -s -m "v5.y.z" "v5.y.z"
+   ```
+3. Push the commit and the tag:
+   ```Shell
+   git push origin master "v5.y.z"
+   ```
+
+The workflow fails if the tag doesn't match the `project.clj` version. It
+deploys from the `clojars` GitHub environment using its `CLOJARS_USERNAME`
+variable and `CLOJARS_DEPLOY_TOKEN` secret.
 
 ## License
 

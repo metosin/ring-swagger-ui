@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+env:
+  LEIN_VERSION: "2.12.0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+          persist-credentials: false
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: DeLaGuardo/setup-clojure@13.7.0
+        with:
+          lein: ${{ env.LEIN_VERSION }}
+
+      - name: Check that the tag matches the project.clj version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          version=$(sed -n 's/^(defproject [^ ]* "\([^"]*\)".*/\1/p' project.clj)
+          if [ "$TAG" != "v$version" ]; then
+            echo "::error::Tag $TAG does not match project.clj version $version (expected tag v$version)"
+            exit 1
+          fi
+
+      - name: Build jar
+        run: lein jar
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # The Clojars username (variable) and deploy token (secret) are stored
+    # in this environment, so only this job can read them.
+    environment: clojars
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+          persist-credentials: false
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: DeLaGuardo/setup-clojure@13.7.0
+        with:
+          lein: ${{ env.LEIN_VERSION }}
+
+      - name: Deploy to Clojars
+        run: lein deploy clojars
+        env:
+          CLOJARS_USERNAME: ${{ vars.CLOJARS_USERNAME }}
+          CLOJARS_PASSWORD: ${{ secrets.CLOJARS_DEPLOY_TOKEN }}
